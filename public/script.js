@@ -29,5 +29,5 @@ document.getElementById('submitBtn').addEventListener('click', async () => {
         answerDiv.innerHTML = "Có lỗi xảy ra: " + error.message;
     }
 
-    questionInput.value = ''; // Làm sạch input
+    questionInput.value = ''; 
 });

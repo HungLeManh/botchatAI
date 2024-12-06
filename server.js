@@ -16,7 +16,7 @@ app.post('/ask', async (req, res) => {
     try {
         const model = genAI.getGenerativeModel({ model: "gemini-pro" });
 
-        // Gửi câu hỏi đến Gemini để xác định câu trả lời đúng
+        
         const prompt = `Dựa trên câu hỏi và các đáp án sau, hãy xác định câu trả lời đúng:
         
         ${question}
@@ -30,9 +30,9 @@ app.post('/ask', async (req, res) => {
         // Xử lý và định dạng lại câu hỏi
         const lines = question.split('\n');
         const formattedQuestion = lines.map((line, index) => {
-            if (index === 0) return line; // Câu hỏi
+            if (index === 0) return line; 
             if (line.startsWith(correctAnswer)) {
-                return `<u>${line}</u>`; // Gạch chân đáp án đúng
+                return `<u>${line}</u>`; 
             }
             return line;
         }).join('<br>');
